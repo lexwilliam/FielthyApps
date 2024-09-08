@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Feature.Nutrition.MakananPokokActivity"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:id="@+id/linearLayout11"
+        android:layout_width="410dp"
+        android:layout_height="120dp"
+        android:background="#F3F3F3"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/iV_kembali"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                app:srcCompat="@drawable/ic_baseline_back_green_24" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="110dp"
+                android:text="Kategori"
+                android:textColor="#2BA978"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Makanan Pokok"
+            android:textStyle="bold"
+            android:textColor="#2BA978"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="292dp"
+        android:layout_height="376dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/bg_input_text"
+        android:elevation="3dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout11">
+
+
+        <EditText
+            android:id="@+id/eT_makanansatu"
+            android:layout_width="210dp"
+            android:layout_height="38dp"
+            android:background="@drawable/bg_item_medcheck"
+            android:elevation="3dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:hint="Makanan Pertama"
+            android:textColorHint="@color/grey"
+            android:textSize="12dp"
+            android:textColor="@color/black"
+            android:paddingLeft="10dp"/>
+
+        <Spinner
+            android:id="@+id/spinner_makansatu"
+            android:layout_width="210dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_item_medcheck"
+            android:elevation="3dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:spinnerMode="dropdown"/>
+
+        <EditText
+            android:id="@+id/eT_makanandua"
+            android:layout_width="210dp"
+            android:layout_height="38dp"
+            android:background="@drawable/bg_item_medcheck"
+            android:elevation="3dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:hint="Makanan Pertama"
+            android:textColorHint="@color/grey"
+            android:textSize="12dp"
+            android:textColor="@color/black"
+            android:paddingLeft="10dp"/>
+
+        <Spinner
+            android:id="@+id/spinner_makandua"
+            android:layout_width="210dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_item_medcheck"
+            android:elevation="3dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:spinnerMode="dropdown"/>
+
+        <EditText
+            android:id="@+id/eT_makananketiga"
+            android:layout_width="210dp"
+            android:layout_height="38dp"
+            android:background="@drawable/bg_item_medcheck"
+            android:elevation="3dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:hint="Makanan Pertama"
+            android:textColorHint="@color/grey"
+            android:textSize="12dp"
+            android:textColor="@color/black"
+            android:paddingLeft="10dp"/>
+
+        <Spinner
+            android:id="@+id/spinner_makantiga"
+            android:layout_width="210dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_item_medcheck"
+            android:elevation="3dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:spinnerMode="dropdown"/>
+        
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_submit"
+        android:layout_width="300dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="56dp"
+        android:background="@drawable/btn_submit"
+        android:text="Submit"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/LL_menu" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Auth.RegistrasiActivity"
+    android:background="@color/white">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="92dp"
+            android:src="@drawable/ic_forgot"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/ic_bubble"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="-7dp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Nama Lengkap"
+            android:textColor="#1B9A80" />
+
+        <EditText
+            android:id="@+id/eT_name"
+            android:layout_width="345dp"
+            android:layout_height="61dp"
+            android:background="@drawable/btn_input"
+            android:drawableLeft="@drawable/ic_name"
+            android:elevation="3dp"
+            android:hint="Masukkan Nama Lengkap"
+            android:inputType="textEmailAddress"
+            android:paddingLeft="10dp"
+            android:textColor="@color/black"
+            android:textColorHint="#D2D0D0" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Email"
+            android:textColor="#1B9A80" />
+
+        <EditText
+            android:id="@+id/eT_email"
+            android:layout_width="345dp"
+            android:layout_height="61dp"
+            android:background="@drawable/btn_input"
+            android:drawableLeft="@drawable/ic_email"
+            android:elevation="3dp"
+            android:hint="Masukkan Email"
+            android:inputType="textEmailAddress"
+            android:paddingLeft="10dp"
+            android:textColor="@color/black"
+            android:textColorHint="#D2D0D0" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Tempat Tanggal Lahir"
+            android:textColor="#1B9A80" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_margin="10dp"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/eT_location"
+                android:layout_width="161dp"
+                android:layout_height="35dp"
+                android:background="@drawable/btn_input"
+                android:drawableLeft="@drawable/ic_location"
+                android:elevation="3dp"
+                android:hint="Location"
+                android:inputType="textEmailAddress"
+                android:paddingLeft="10dp"
+                android:textColor="@color/black"
+                android:textColorHint="#D2D0D0"
+                android:textSize="12sp" />
+
+            <EditText
+                android:id="@+id/eT_date"
+                android:layout_width="161dp"
+                android:layout_height="35dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/btn_input"
+                android:drawableRight="@drawable/ic_date"
+                android:elevation="3dp"
+                android:hint="DD/MM/yyyy"
+                android:inputType="date"
+                android:paddingRight="10dp"
+                android:textColor="@color/black"
+                android:textColorHint="#D2D0D0"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Jenis Kelamin"
+            android:textColor="#1B9A80" />
+
+        <RadioGroup
+            android:id="@+id/rG_gender"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rB_laki"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="Laki- Laki"
+                android:textColor="@color/black"
+                android:buttonTint="#009688" />
+
+            <RadioButton
+                android:id="@+id/rB_wanita"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Perempuan"
+                android:textColor="@color/black"
+                android:buttonTint="#009688"/>
+
+
+        </RadioGroup>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Password"
+            android:textColor="#1B9A80" />
+
+        <EditText
+            android:id="@+id/eT_password_registrasi"
+            android:layout_width="345dp"
+            android:layout_height="61dp"
+            android:background="@drawable/btn_input"
+            android:drawableLeft="@drawable/ic_pass"
+            android:elevation="3dp"
+            android:hint="Masukkan Password"
+            android:inputType="textPassword"
+            android:paddingLeft="10dp"
+            android:textColor="@color/black"
+            android:textColorHint="#D2D0D0" />
+
+        <Button
+            android:id="@+id/btn_registrasi"
+            android:layout_width="345dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="26dp"
+            android:background="@drawable/btn_submit"
+            android:text="Masuk"
+            android:textAllCaps="false" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Anda sudah punya akun?"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/tV_masuk"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Masuk"
+                android:textColor="#1493B5"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "991447274305",
+    "project_id": "fielthyapps",
+    "storage_bucket": "fielthyapps.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:991447274305:android:2d1b934b0c1887759907c0",
+        "android_client_info": {
+          "package_name": "example.com.fielthyapps"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCvoXEO7UnD2-czzZx7BYG_-ms-lp4ZRr8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

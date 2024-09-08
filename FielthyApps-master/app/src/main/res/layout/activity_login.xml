@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Auth.LoginActivity"
+    android:background="@color/white">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/ic_bubble"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="-7dp" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animation_view"
+        android:layout_width="178dp"
+        android:layout_height="315dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="85dp"
+        android:layout_marginEnd="10dp"
+        android:elevation="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/login" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/animation_view">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Email"
+            android:textColor="#1B9A80"/>
+
+        <EditText
+            android:id="@+id/eT_email_login"
+            android:layout_width="345dp"
+            android:layout_height="61dp"
+            android:background="@drawable/btn_input"
+            android:elevation="3dp"
+            android:hint="Masukkan Email"
+            android:inputType="textEmailAddress"
+            android:textColorHint="#D2D0D0"
+            android:textColor="@color/black"
+            android:paddingLeft="10dp"
+           android:drawableLeft="@drawable/ic_email"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Password"
+            android:textColor="#1B9A80"
+            android:layout_marginTop="10dp"/>
+
+        <EditText
+            android:id="@+id/eT_password_login"
+            android:layout_width="345dp"
+            android:layout_height="61dp"
+            android:background="@drawable/btn_input"
+            android:elevation="3dp"
+            android:hint="Masukkan Password"
+            android:inputType="textPassword"
+            android:textColorHint="#D2D0D0"
+            android:textColor="@color/black"
+            android:paddingLeft="10dp"
+            android:drawableLeft="@drawable/ic_pass"/>
+
+        <TextView
+            android:id="@+id/tV_forgetPass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lupa Password?"
+            android:textAlignment="textEnd"
+            android:gravity="end"
+            android:layout_gravity="end"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/black"/>
+
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="345dp"
+            android:layout_height="50dp"
+            android:background="@drawable/btn_submit"
+            android:layout_marginTop="26dp"
+            android:text="Masuk"
+            android:textAllCaps="false"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Anda tidak punya akun?"
+                android:textColor="@color/black"/>
+            <TextView
+                android:id="@+id/tV_daftar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Daftar"
+                android:textColor="#1493B5"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

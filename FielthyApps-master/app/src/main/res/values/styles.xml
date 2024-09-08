@@ -1,0 +1,7 @@
+<resources>
+
+<style name="TabLayoutStyle">
+    <item name="android:background">@drawable/bg_physical</item>
+</style>
+
+    </resources>

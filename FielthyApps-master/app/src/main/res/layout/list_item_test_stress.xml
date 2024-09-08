@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/white">
+
+
+    <TextView
+        android:id="@+id/tV_quest"
+        android:layout_width="377dp"
+        android:layout_height="59dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/bg_btn_grey"
+        android:gravity="center"
+        android:text="1.Saya mudah kesal akibat hal-hal kecil"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RadioGroup
+        android:id="@+id/rG_answer"
+        android:layout_width="377dp"
+        android:layout_height="144dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/bg_input_text"
+        android:elevation="4dp"
+        android:orientation="vertical"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tV_quest">
+
+<!--        <RadioButton-->
+<!--            android:id="@+id/rB_opt_a"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:checked="true"-->
+<!--            android:text="Tidak sesuai/tidak pernah"-->
+<!--            android:textColor="@color/black" />-->
+
+<!--        <RadioButton-->
+<!--            android:id="@+id/rB_opt_b"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Perilaku muncul sesekali/jarang"-->
+<!--            android:textColor="@color/black" />-->
+
+<!--        <RadioButton-->
+<!--            android:id="@+id/rB_opt_c"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Sesuai/cukup sering muncul"-->
+<!--            android:textColor="@color/black" />-->
+
+<!--        <RadioButton-->
+<!--            android:id="@+id/rB_opt_d"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Sangat sesuai/sangat sering muncul "-->
+<!--            android:textColor="@color/black" />-->
+
+
+    </RadioGroup>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

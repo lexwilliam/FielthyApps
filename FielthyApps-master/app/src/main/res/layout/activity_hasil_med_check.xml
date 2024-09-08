@@ -1,0 +1,498 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Feature.Medcheck.HasilMedCheckActivity"
+    android:background="@color/white">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/linearLayout11"
+            android:layout_width="410dp"
+            android:layout_height="120dp"
+            android:background="#F3F3F3"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="65dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="110dp"
+                    android:text="Kategori"
+                    android:textColor="#2BA978"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Med Check"
+                android:textColor="#2BA978"
+                android:textSize="14sp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="50dp"
+                    android:layout_height="43dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_gravity="center"
+                        app:srcCompat="@drawable/ic_menu_done" />
+
+                    <TextView
+                        android:layout_width="50dp"
+                        android:layout_height="24dp"
+                        android:gravity="center_horizontal"
+                        android:layout_marginTop="5dp"
+                        android:text="Med-check"
+                        android:textColor="@color/black"
+                        android:textAlignment="center"
+                        android:textSize="8sp" />
+
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="50dp"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="10dp"
+                    android:background="#2BA978" />
+
+                <LinearLayout
+                    android:layout_width="50dp"
+                    android:layout_height="43dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_gravity="center"
+                        app:srcCompat="@drawable/ic_menu_done"
+                        tools:ignore="VectorDrawableCompat" />
+
+                    <TextView
+                        android:layout_width="50dp"
+                        android:layout_height="24dp"
+                        android:layout_marginTop="5dp"
+                        android:gravity="center_horizontal"
+                        android:text="Hasil\nPemeriksaan"
+                        android:textColor="@color/black"
+                        android:textAlignment="center"
+                        android:textSize="8sp" />
+
+
+                </LinearLayout>
+
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/LL_hasil_pemeriksaan"
+            android:layout_width="294dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/bg_input_text"
+            android:elevation="2dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.504"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout11">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+
+                android:text="Hasil Pemeriksaan"
+                android:textColor="@color/green"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="225dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:text="Dibawah ini adalah hasil rangkuman dari pemeriksaan fisik anda yang telah anda isi sebelumnya."
+                android:textColor="@color/grey"
+                android:textSize="13sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:text="IMT(Indeks Masa Tubuh)"
+                android:textColor="@color/green"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tV_hasil_imt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:text=".........."
+                android:textColor="@color/grey"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:text="Lingkar Perut"
+                android:textColor="@color/green"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tV_hasil_lingkar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+
+                android:text=".........."
+                android:textColor="@color/grey"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+
+                android:text="Tekanan Darah"
+                android:textColor="@color/green"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tV_hasil_tekanan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:text=".......... "
+                android:textColor="@color/grey"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+
+                android:text="Gula Darah Sewaktu"
+                android:textColor="@color/green"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tV_hasil_gula"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+
+                android:text=".......... mg/dL"
+                android:textColor="@color/grey"
+                android:textSize="12sp" />
+
+            <!--            <TextView-->
+            <!--                android:id="@+id/tV_keterangan_gula"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginTop="10dp"-->
+            <!--                android:layout_marginLeft="10dp"-->
+            <!--                android:text="Keterangan"-->
+            <!--                android:textSize="12sp"-->
+            <!--                android:textColor="@color/grey"/>-->
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:text="Kolestrol Total"
+                android:textColor="@color/green"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tV_hasil_lemak"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text=".......... mg/dL"
+                android:textColor="@color/grey"
+                android:textSize="12sp" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/LL_ptm_merah"
+            android:layout_width="294dp"
+            android:layout_height="550dp"
+            android:layout_marginTop="36dp"
+            android:background="@drawable/bg_input_text"
+            android:orientation="vertical"
+            android:elevation="2dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/LL_hasil_pemeriksaan">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+
+                android:text="Laporan Kesehatan"
+                android:textColor="@color/green"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="224dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="Dibawah ini adalah laporan kesehatan berdasarkan dari hasil pemeriksaan anda."
+                android:textColor="@color/black"
+                android:textSize="12sp" />
+
+
+            <LinearLayout
+                android:layout_width="234dp"
+                android:layout_height="95dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/bg_input_text"
+                android:elevation="3dp"
+                android:orientation="horizontal">
+
+                <View
+                    android:id="@+id/indikator_satu"
+                    android:layout_width="10dp"
+                    android:layout_height="95dp"
+                    android:background="@color/red" />
+
+                <TextView
+                    android:id="@+id/tV_indikator_tekanan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:text="Anda Menderita Hipertensi
+                    \n1. Pertahankan gaya hidup sehat
+                    \n2. Olahraga Aerobik teratur setidaknya 150 menit/minggu
+                    \n3. Hindari merokok dan alkohol berlebihan
+                    \n4. Lakukan pengecekan darah kembali setidaknya 1 tahun sekali"
+                    android:textColor="@color/black"
+                    android:textSize="10sp" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="234dp"
+                android:layout_height="95dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/bg_input_text"
+                android:elevation="3dp"
+                android:orientation="horizontal">
+
+                <View
+                    android:id="@+id/indikator_kedua"
+                    android:layout_width="10dp"
+                    android:layout_height="95dp"
+                    android:background="@color/red" />
+
+                <TextView
+                    android:id="@+id/tV_indikator_gula"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+
+                    android:text="Anda Menderita Diabetes"
+                    android:textColor="@color/black"
+                    android:textSize="10sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="234dp"
+                android:layout_height="95dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/bg_input_text"
+                android:elevation="3dp"
+                android:orientation="horizontal">
+
+                <View
+                    android:id="@+id/indikator_ketiga"
+                    android:layout_width="10dp"
+                    android:layout_height="95dp"
+                    android:background="@color/red" />
+
+                <TextView
+                    android:id="@+id/tV_indikator_imt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+
+                    android:text="Anda Menderita Obesitas"
+                    android:textColor="@color/black"
+                    android:textSize="10sp" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="234dp"
+                android:layout_height="95dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/bg_input_text"
+                android:elevation="3dp"
+                android:orientation="horizontal">
+
+                <View
+                    android:id="@+id/indikator_keempat"
+                    android:layout_width="10dp"
+                    android:layout_height="95dp"
+                    android:background="@color/red" />
+
+                <TextView
+                    android:id="@+id/tV_indikator_kolestrol"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+
+                    android:text="Anda Menderita Obesitas"
+                    android:textColor="@color/black"
+                    android:textSize="10sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!--        <LinearLayout-->
+        <!--            android:id="@+id/LL_laporan_ptm"-->
+        <!--            android:layout_width="294dp"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginTop="16dp"-->
+        <!--            android:background="@drawable/bg_input_text"-->
+        <!--            android:elevation="2dp"-->
+        <!--            android:orientation="vertical"-->
+        <!--            app:layout_constraintEnd_toEndOf="parent"-->
+        <!--            app:layout_constraintStart_toStartOf="parent"-->
+        <!--            app:layout_constraintTop_toBottomOf="@+id/LL_ptm_merah">-->
+
+        <!--            <TextView-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:layout_marginLeft="20dp"-->
+        <!--                android:layout_marginTop="10dp"-->
+        <!--                -->
+        <!--                android:text="Interpretasi PTM"-->
+        <!--                android:textColor="@color/green"-->
+        <!--                android:textSize="14sp" />-->
+
+
+        <!--            <TextView-->
+        <!--                android:layout_width="238dp"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:layout_marginLeft="20dp"-->
+        <!--                android:layout_marginTop="10dp"-->
+        <!--                -->
+        <!--                android:text="Dibawah ini adalah prediksi tentang seberapa tinggi resiko anda terkena Penyakit Tidak Menular."-->
+        <!--                android:textColor="@color/grey"-->
+        <!--                android:textSize="12sp" />-->
+
+
+        <!--            <TextView-->
+        <!--                android:layout_width="238dp"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:layout_gravity="center"-->
+        <!--                android:layout_marginTop="10dp"-->
+        <!--                -->
+        <!--                android:text="Kemungkinan Anda Terkena PTM adalah"-->
+        <!--                android:textColor="@color/black"-->
+        <!--                android:textSize="12sp" />-->
+
+
+        <!--            <TextView-->
+        <!--                android:id="@+id/tV_kategori_ptm"-->
+        <!--                android:layout_width="238dp"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:layout_gravity="center"-->
+        <!--                android:layout_marginTop="10dp"-->
+        <!--                -->
+        <!--                android:text="RENDAH"-->
+        <!--                android:textAlignment="center"-->
+        <!--                android:textColor="@color/green"-->
+        <!--                android:textSize="18sp" />-->
+
+
+        <!--&lt;!&ndash;            <ImageView&ndash;&gt;-->
+        <!--&lt;!&ndash;                android:id="@+id/iV_emot"&ndash;&gt;-->
+        <!--&lt;!&ndash;                android:layout_width="72dp"&ndash;&gt;-->
+        <!--&lt;!&ndash;                android:layout_height="72dp"&ndash;&gt;-->
+        <!--&lt;!&ndash;                android:layout_gravity="center"&ndash;&gt;-->
+        <!--&lt;!&ndash;                android:layout_marginTop="10dp"&ndash;&gt;-->
+        <!--&lt;!&ndash;                android:src="@drawable/emot_smile" />&ndash;&gt;-->
+        <!--        </LinearLayout>-->
+
+
+        <Button
+            android:id="@+id/btn_selesai"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/bg_btn_green"
+            android:text="Selesai"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/LL_ptm_merah" />
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
