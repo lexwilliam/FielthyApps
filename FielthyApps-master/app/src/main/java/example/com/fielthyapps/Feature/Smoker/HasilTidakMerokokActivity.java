@@ -11,8 +11,6 @@ import android.widget.TextView;
 
 import java.util.Random;
 
-import example.com.fielthyapps.Feature.Nutrition.NutritionActivity;
-import example.com.fielthyapps.Feature.Nutrition.SayurSayuranActivity;
 import example.com.fielthyapps.HomeActivity;
 import example.com.fielthyapps.R;
 

@@ -131,15 +131,29 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout11">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
 
-                android:text="Hasil Pemeriksaan"
-                android:textColor="@color/green"
-                android:textSize="18sp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+
+                    android:layout_weight="1"
+                    android:text="Hasil Pemeriksaan"
+                    android:textColor="@color/green"
+                    android:textSize="18sp" />
+
+                <ImageButton
+                    android:layout_marginHorizontal="8dp"
+                    android:id="@+id/imgBtnHasilPemeriksaan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/baseline_volume_up_24" />
+            </LinearLayout>
 
             <TextView
                 android:layout_width="225dp"
@@ -272,15 +286,29 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/LL_hasil_pemeriksaan">
 
-            <TextView
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
 
-                android:text="Laporan Kesehatan"
-                android:textColor="@color/green"
-                android:textSize="14sp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+
+                    android:layout_weight="1"
+                    android:text="Laporan Kesehatan"
+                    android:textColor="@color/green"
+                    android:textSize="14sp" />
+
+                <ImageButton
+                    android:id="@+id/imgBtnLaporanKesehatan"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/baseline_volume_up_24" />
+            </LinearLayout>
 
             <TextView
                 android:layout_width="224dp"

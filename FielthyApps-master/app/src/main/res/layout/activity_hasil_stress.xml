@@ -129,14 +129,28 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout11">
 
-        <TextView
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingTop="10dp"
             android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:text="Hasil Pemeriksaan"
-            android:textColor="@color/black"
-            android:textSize="15sp" />
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Hasil Pemeriksaan"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+            <ImageButton
+                android:layout_marginLeft="16dp"
+                android:id="@+id/imgBtnHasilPemeriksaan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/baseline_volume_up_24"/>
+        </LinearLayout>
 
         <ImageView
             android:id="@+id/iV_status"

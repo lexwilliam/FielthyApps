@@ -21,10 +21,6 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
 
-import example.com.fielthyapps.Feature.Medcheck.HasilMedCheckActivity;
-import example.com.fielthyapps.Feature.Medcheck.MedCheckActivity;
-import example.com.fielthyapps.Feature.Nutrition.NutritionActivity;
-import example.com.fielthyapps.Feature.Nutrition.SayurSayuranActivity;
 import example.com.fielthyapps.R;
 
 public class TestSmokerActivity extends AppCompatActivity {

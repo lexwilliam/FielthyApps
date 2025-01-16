@@ -34,7 +34,6 @@ import java.util.HashMap;
 import java.util.Locale;
 import java.util.concurrent.TimeUnit;
 
-import example.com.fielthyapps.Feature.RestPattern.HasilTestRestActivity;
 import example.com.fielthyapps.HomeActivity;
 import example.com.fielthyapps.R;
 

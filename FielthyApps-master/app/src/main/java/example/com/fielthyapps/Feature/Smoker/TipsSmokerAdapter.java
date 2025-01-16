@@ -6,8 +6,6 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import example.com.fielthyapps.Feature.Stress.QuestSectionsatuAdapter;
-
 public class TipsSmokerAdapter extends RecyclerView.Adapter<TipsSmokerAdapter.ViewHolder>{
     @NonNull
     @Override

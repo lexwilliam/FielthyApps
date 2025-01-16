@@ -14,7 +14,6 @@ import java.util.List;
 
 import example.com.fielthyapps.Feature.History.data.NutritionList;
 import example.com.fielthyapps.Feature.Nutrition.HasilNutritionActivity;
-import example.com.fielthyapps.Feature.Smoker.HasilSmokerActivity;
 import example.com.fielthyapps.R;
 
 public class NutritionAdapter extends RecyclerView.Adapter<NutritionAdapter.ViewHolder> {

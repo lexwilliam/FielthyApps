@@ -9,8 +9,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import example.com.fielthyapps.Feature.Stress.QuestList;
-import example.com.fielthyapps.Feature.Stress.QuestSectionsatuAdapter;
 import example.com.fielthyapps.R;
 
 public class InformasiMenjauhiRokokAdapter extends RecyclerView.Adapter<InformasiMenjauhiRokokAdapter.ViewHolder> {

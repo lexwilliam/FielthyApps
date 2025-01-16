@@ -27,8 +27,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import example.com.fielthyapps.Feature.Nutrition.MakananPokokActivity;
-import example.com.fielthyapps.Feature.Nutrition.NutritionActivity;
 import example.com.fielthyapps.R;
 
 public class SectionSatuActivity extends AppCompatActivity {

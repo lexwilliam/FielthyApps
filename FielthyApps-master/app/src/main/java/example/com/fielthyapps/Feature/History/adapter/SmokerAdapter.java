@@ -15,11 +15,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-import example.com.fielthyapps.Feature.History.HistoryAdapter;
-import example.com.fielthyapps.Feature.History.HistoryList;
-import example.com.fielthyapps.Feature.History.data.RestList;
 import example.com.fielthyapps.Feature.History.data.SmokerList;
-import example.com.fielthyapps.Feature.Medcheck.HasilMedCheckActivity;
 import example.com.fielthyapps.Feature.Smoker.HasilSmokerActivity;
 import example.com.fielthyapps.R;
 

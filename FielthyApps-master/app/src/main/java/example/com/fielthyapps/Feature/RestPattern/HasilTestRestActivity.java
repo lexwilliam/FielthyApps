@@ -1,23 +1,13 @@
 package example.com.fielthyapps.Feature.RestPattern;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
-import android.content.BroadcastReceiver;
-import android.content.Context;
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.util.Locale;
-import java.util.concurrent.TimeUnit;
-
-import example.com.fielthyapps.HomeActivity;
 import example.com.fielthyapps.R;
 
 public class HasilTestRestActivity extends AppCompatActivity {

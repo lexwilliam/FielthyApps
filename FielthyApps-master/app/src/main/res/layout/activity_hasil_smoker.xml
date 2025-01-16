@@ -149,43 +149,27 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
+            android:gravity="center_vertical"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout11">
-
-            <View
-                android:id="@+id/view"
-                android:layout_width="70dp"
-                android:layout_height="1dp"
-                android:layout_marginStart="60dp"
-                android:layout_marginTop="24dp"
-                android:layout_marginEnd="16dp"
-                android:background="#2BA978"
-                app:layout_constraintEnd_toStartOf="@+id/textView8"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/linearLayout11" />
 
 
             <TextView
                 android:id="@+id/textView8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
                 android:text="Hasil Pemeriksaan"
                 android:textColor="#2BA978"
                 android:textSize="12sp"
                 tools:layout_editor_absoluteX="152dp" />
 
-
-            <View
-                android:id="@+id/view2"
-                android:layout_width="70dp"
-                android:layout_height="1dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="24dp"
-                android:layout_marginEnd="72dp"
-                android:background="#2BA978"
-                app:layout_constraintEnd_toEndOf="parent" />
+            <ImageButton
+                android:layout_marginLeft="16dp"
+                android:id="@+id/imgBtnHasilPemeriksaan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/baseline_volume_up_24" />
 
 
         </LinearLayout>

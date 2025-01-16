@@ -13,7 +13,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 import example.com.fielthyapps.Feature.History.data.StressList;
-import example.com.fielthyapps.Feature.Smoker.HasilSmokerActivity;
 import example.com.fielthyapps.Feature.Stress.HasilStressActivity;
 import example.com.fielthyapps.R;
 

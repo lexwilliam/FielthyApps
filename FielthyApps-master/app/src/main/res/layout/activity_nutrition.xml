@@ -217,9 +217,9 @@
                 <ImageView
                     android:layout_width="73dp"
                     android:layout_height="68dp"
-                    android:src="@drawable/makan"
                     android:layout_gravity="center"
-                    android:layout_marginTop="10dp"/>
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/makan" />
 
             </LinearLayout>
 
@@ -307,20 +307,36 @@
 
 <!--    </LinearLayout>-->
 
+    <TextView
+        android:id="@+id/tv_camera"
+        android:layout_width="270dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/bg_btn_tips"
+        android:elevation="3dp"
+        android:gravity="center"
+        android:text="Food Recognition"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tV_diet" />
+
     <Button
         android:id="@+id/btn_hasil"
         android:layout_width="250dp"
         android:layout_height="44dp"
-        android:layout_marginBottom="36dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/btn_submit"
         android:text="Lihat Hasil"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_camera" />
 
     <!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
 

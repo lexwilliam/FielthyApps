@@ -23,31 +23,22 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 import example.com.fielthyapps.HomeActivity;
 import example.com.fielthyapps.R;
+import example.com.fielthyapps.databinding.ActivityNutritionBinding;
 
 public class NutritionActivity extends AppCompatActivity {
-    private LinearLayout makanan,sayuran,buah,lauk;
-    private TextView tV_makananSehat,tV_dietSehat;
-    private Button btn_hasil;
     private String id;
     private FirebaseAuth firebaseAuth;
     private FirebaseUser firebaseUser;
     private FirebaseFirestore fStore;
-    private ImageView iV_back;
+    private ActivityNutritionBinding binding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_nutrition);
-        makanan = findViewById(R.id.LL_makanan);
-        sayuran = findViewById(R.id.LL_sayuran);
-        buah =  findViewById(R.id.LL_buah);
-        lauk = findViewById(R.id.LL_laukpauk);
-        tV_makananSehat = findViewById(R.id.tV_makanan_sehat);
-        tV_dietSehat = findViewById(R.id.tV_diet);
-        btn_hasil = findViewById(R.id.btn_hasil);
+        binding = ActivityNutritionBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseUser = firebaseAuth.getCurrentUser();
         fStore = FirebaseFirestore.getInstance();
-        iV_back = findViewById(R.id.iV_kembali);
 
         Intent iin = getIntent();
         final Bundle b = iin.getExtras();
@@ -57,7 +48,7 @@ public class NutritionActivity extends AppCompatActivity {
         }
         checktest();
 
-        iV_back.setOnClickListener(new View.OnClickListener() {
+        binding.iVKembali.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(NutritionActivity.this, HomeActivity.class);
@@ -66,7 +57,7 @@ public class NutritionActivity extends AppCompatActivity {
                 finish();
             }
         });
-        tV_dietSehat.setOnClickListener(new View.OnClickListener() {
+        binding.tVDiet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(NutritionActivity.this,DietSehatActivity.class);
@@ -75,7 +66,7 @@ public class NutritionActivity extends AppCompatActivity {
             }
         });
 
-        tV_makananSehat.setOnClickListener(new View.OnClickListener() {
+        binding.tVMakananSehat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(NutritionActivity.this,MakananSehatActivity.class);
@@ -84,7 +75,7 @@ public class NutritionActivity extends AppCompatActivity {
             }
         });
 
-        makanan.setOnClickListener(new View.OnClickListener() {
+        binding.LLMakanan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(NutritionActivity.this,MakananPokokActivity.class);
@@ -93,7 +84,7 @@ public class NutritionActivity extends AppCompatActivity {
             }
         });
 
-        sayuran.setOnClickListener(new View.OnClickListener() {
+        binding.LLSayuran.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(NutritionActivity.this,SayurSayuranActivity.class);
@@ -102,7 +93,7 @@ public class NutritionActivity extends AppCompatActivity {
             }
         });
 
-        buah.setOnClickListener(new View.OnClickListener() {
+        binding.LLBuah.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(NutritionActivity.this,BuahBuahanActivity.class);
@@ -111,7 +102,7 @@ public class NutritionActivity extends AppCompatActivity {
             }
         });
 
-        lauk.setOnClickListener(new View.OnClickListener() {
+        binding.LLLaukpauk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(NutritionActivity.this,LaukPaukActivity.class);
@@ -120,7 +111,15 @@ public class NutritionActivity extends AppCompatActivity {
             }
         });
 
-        btn_hasil.setOnClickListener(new View.OnClickListener() {
+        binding.tvCamera.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(NutritionActivity.this, FoodRecognitionActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        binding.btnHasil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(NutritionActivity.this, HasilNutritionActivity.class);
@@ -129,6 +128,7 @@ public class NutritionActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
     }
 
     private void checktest(){
@@ -142,30 +142,30 @@ public class NutritionActivity extends AppCompatActivity {
                     String makananstring = documentSnapshot.getString("makanan");
                     String sayuranstring = documentSnapshot.getString("sayuran");
                     String buahstring = documentSnapshot.getString("buah");
-                    btn_hasil.setVisibility(View.INVISIBLE);
+                    binding.btnHasil.setVisibility(View.INVISIBLE);
 
                     if (laukpauk.equals("1")){
-                        lauk.setBackground(ContextCompat.getDrawable(NutritionActivity.this, R.drawable.bg_nutrition));
+                        binding.LLLaukpauk.setBackground(ContextCompat.getDrawable(NutritionActivity.this, R.drawable.bg_nutrition));
                     }
 
                     if (makananstring.equals("1")){
-                        makanan.setBackground(ContextCompat.getDrawable(NutritionActivity.this, R.drawable.bg_nutrition));
+                        binding.LLMakanan.setBackground(ContextCompat.getDrawable(NutritionActivity.this, R.drawable.bg_nutrition));
                     }
 
                     if (sayuranstring.equals("1")){
-                        sayuran.setBackground(ContextCompat.getDrawable(NutritionActivity.this, R.drawable.bg_nutrition));
+                        binding.LLSayuran.setBackground(ContextCompat.getDrawable(NutritionActivity.this, R.drawable.bg_nutrition));
                     }
 
                     if (buahstring.equals("1")){
-                        buah.setBackground(ContextCompat.getDrawable(NutritionActivity.this, R.drawable.bg_nutrition));
+                        binding.LLBuah.setBackground(ContextCompat.getDrawable(NutritionActivity.this, R.drawable.bg_nutrition));
                     }
 
                     if (laukpauk.equals("1") && makananstring.equals("1") && sayuranstring.equals("1") && buahstring.equals("1")) {
-                        lauk.setBackground(ContextCompat.getDrawable(NutritionActivity.this, R.drawable.bg_nutrition));
-                        makanan.setBackground(ContextCompat.getDrawable(NutritionActivity.this, R.drawable.bg_nutrition));
-                        sayuran.setBackground(ContextCompat.getDrawable(NutritionActivity.this, R.drawable.bg_nutrition));
-                        buah.setBackground(ContextCompat.getDrawable(NutritionActivity.this, R.drawable.bg_nutrition));
-                        btn_hasil.setVisibility(View.VISIBLE);
+                        binding.LLLaukpauk.setBackground(ContextCompat.getDrawable(NutritionActivity.this, R.drawable.bg_nutrition));
+                        binding.LLMakanan.setBackground(ContextCompat.getDrawable(NutritionActivity.this, R.drawable.bg_nutrition));
+                        binding.LLSayuran.setBackground(ContextCompat.getDrawable(NutritionActivity.this, R.drawable.bg_nutrition));
+                        binding.LLBuah.setBackground(ContextCompat.getDrawable(NutritionActivity.this, R.drawable.bg_nutrition));
+                        binding.btnHasil.setVisibility(View.VISIBLE);
 
                     }
 

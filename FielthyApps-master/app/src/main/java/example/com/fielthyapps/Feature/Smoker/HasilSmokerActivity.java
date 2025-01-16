@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -15,16 +16,29 @@ import java.util.Locale;
 import example.com.fielthyapps.Feature.History.HistoryActivity;
 import example.com.fielthyapps.HomeActivity;
 import example.com.fielthyapps.R;
+import example.com.fielthyapps.Service.ElevenLabs;
 
 public class HasilSmokerActivity extends AppCompatActivity {
 private LinearLayout LL_tips,LL_berhenti;
 private Button selesai;
 private TextView tittle,rupiah,tV_bungkus,indicator,seminggu,sebulan,setahun,limatahun,sepuluhtahun,duapuluhtahun;
 private String getBatang,getRupiah,getBungkus,getTahun,id,uid,status;
+
+private ElevenLabs tts;
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        if (tts != null) {
+            tts.stopMp3();
+        }
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hasil_smoker);
+        tts = new ElevenLabs(this);
         tittle = findViewById(R.id.tV_tittle);
         rupiah = findViewById(R.id.tV_rupiah);
         tV_bungkus = findViewById(R.id.tV_bungkus);
@@ -43,6 +57,7 @@ private String getBatang,getRupiah,getBungkus,getTahun,id,uid,status;
         final Bundle b = iin.getExtras();
 
         if (b != null) {
+            String textHasil = "";
             status = (String) b.get("status");
             id = (String) b.get("id");
             uid = (String) b.get("uid");
@@ -52,6 +67,7 @@ private String getBatang,getRupiah,getBungkus,getTahun,id,uid,status;
             getRupiah = (String) b.get("rupiah");
 
             tittle.setText("Anda Mengeluarkan Uang dalam" + getTahun + "tahun terakhir sebesar");
+            textHasil += "Anda Mengeluarkan Uang dalam" + getTahun + "tahun terakhir sebesar";
 
             int harga = Integer.parseInt(getRupiah);
             int bungkus = Integer.parseInt(getBungkus);
@@ -65,9 +81,21 @@ private String getBatang,getRupiah,getBungkus,getTahun,id,uid,status;
 
             if (batang >= 20){
                 indicator.setText("Perokok Berat");
+                textHasil += "Anda termasuk Perokok Berat";
             }else if (batang <20){
                 indicator.setText("Perokok Ringan");
+                textHasil += "Anda termasuk Perokok Ringan";
             }
+
+            ImageButton imgBtnHasilPemeriksaan = findViewById(R.id.imgBtnHasilPemeriksaan);
+            String finalTextHasil = textHasil;
+            imgBtnHasilPemeriksaan.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    tts.textToSpeech(finalTextHasil);
+                }
+            });
+
             int hasil_seminggu = hasil/52/tahun;
             int hasil_sebulan  = hasil/12/tahun;
             int hasil_setahun = hasil/tahun;

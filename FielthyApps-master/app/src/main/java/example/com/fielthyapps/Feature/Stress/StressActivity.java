@@ -8,7 +8,6 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
-import example.com.fielthyapps.Feature.RestPattern.RestPatternActivity;
 import example.com.fielthyapps.HomeActivity;
 import example.com.fielthyapps.R;
 

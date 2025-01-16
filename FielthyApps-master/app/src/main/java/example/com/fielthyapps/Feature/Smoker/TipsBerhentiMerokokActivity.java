@@ -9,8 +9,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
-import example.com.fielthyapps.Feature.Stress.QuestList;
-import example.com.fielthyapps.Feature.Stress.QuestSectionsatuAdapter;
 import example.com.fielthyapps.R;
 
 public class TipsBerhentiMerokokActivity extends AppCompatActivity {

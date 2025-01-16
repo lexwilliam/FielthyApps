@@ -1,6 +1,5 @@
 package example.com.fielthyapps.Feature.Stress;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -10,6 +9,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -18,18 +18,16 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.FirebaseFirestoreException;
 
+import java.util.Locale;
 import java.util.Map;
 
 import example.com.fielthyapps.Feature.History.HistoryActivity;
-import example.com.fielthyapps.Feature.Smoker.HasilSmokerActivity;
 import example.com.fielthyapps.Feature.Smoker.InformasiMenjauhiRokokAdapter;
 import example.com.fielthyapps.Feature.Smoker.SmokerTipsList;
-import example.com.fielthyapps.HomeActivity;
 import example.com.fielthyapps.R;
+import example.com.fielthyapps.Service.ElevenLabs;
 
 public class HasilStressActivity extends AppCompatActivity {
     private TextView tV_hasil, tV_angka;
@@ -40,6 +38,7 @@ public class HasilStressActivity extends AppCompatActivity {
     private FirebaseFirestore fStore;
     private String id, status,type;
     private ImageView iV_status;
+    private ElevenLabs tts;
 
     @Override
     public void onBackPressed() {
@@ -50,6 +49,7 @@ public class HasilStressActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hasil_stress);
+        tts = new ElevenLabs(this);
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseUser = firebaseAuth.getCurrentUser();
         fStore = FirebaseFirestore.getInstance();
@@ -102,6 +102,7 @@ public class HasilStressActivity extends AppCompatActivity {
                   if (documentSnapshot != null){
                       if (documentSnapshot.exists()) {
                           Map<String, Object> data = documentSnapshot.getData();
+                          String textHasil = "";
                           if (data != null) {
                               int totalHasil = calculateTotalHasil(data);
                               Log.d("Score", "Score " + totalHasil);
@@ -109,22 +110,27 @@ public class HasilStressActivity extends AppCompatActivity {
                                   tV_angka.setText("Score " + totalHasil);
                                   tV_hasil.setText("Normal");
                                   iV_status.setImageResource(R.drawable.status_normal);
+                                  textHasil += "Score " + totalHasil + "\n" + "Normal";
                               } else if (totalHasil < 19) {
                                   tV_angka.setText("Score " + totalHasil);
                                   tV_hasil.setText("Ringan");
                                   iV_status.setImageResource(R.drawable.status_ringan);
+                                  textHasil += "Score " + totalHasil + "\n" + "Ringan";
                               } else if (totalHasil < 26) {
                                   tV_angka.setText("Score " + totalHasil);
                                   tV_hasil.setText("Sedang");
                                   iV_status.setImageResource(R.drawable.status_sedang);
+                                  textHasil += "Score " + totalHasil + "\n" + "Sedang";
                               } else if (totalHasil < 34) {
                                   tV_angka.setText("Score " + totalHasil);
                                   tV_hasil.setText("Berat");
                                   iV_status.setImageResource(R.drawable.status_besar);
+                                  textHasil += "Score " + totalHasil + "\n" + "Berat";
                               } else {
                                   tV_angka.setText("Score " + totalHasil);
                                   tV_hasil.setText("Sangat Berat");
                                   iV_status.setImageResource(R.drawable.status_sangat);
+                                  textHasil += "Score " + totalHasil + "\n" + "Sangat Berat";
                               }
 
                               SmokerTipsList[] myListData = new SmokerTipsList[] {
@@ -138,6 +144,25 @@ public class HasilStressActivity extends AppCompatActivity {
                                               "makan bergizi seimbang, serta terapkan perilaku bersih dan sehat",R.drawable.nmbr_seven,R.drawable.stress_tujuh),
 
                               };
+                              textHasil += "Berikut adalah tips yang dapat Anda lakukan untuk mengurangi stress:\n";
+                              textHasil += "Bicarakan keluhan dengan seseorang yang dapat dipercaya";
+                              textHasil += "Melakukan kegiatan yang sesuai dengan minat dan kemampuan";
+                              textHasil += "Kembangkan hobi yang bermanfaat";
+                              textHasil += "Meningkatkan ibadah dan mendekatkan diri pada tuhan";
+                              textHasil += "Berpikir positif";
+                              textHasil += "Tenangkan pikiran dengan relaksasi";
+                              textHasil += "Jagalah Kesehatan dengan olahraga aktivitas fisik secara teratur, tidak cukup,\n" +
+                                      "makan bergizi seimbang, serta terapkan perilaku bersih dan sehat";
+                              ImageButton imgBtnHasilPemeriksaan = findViewById(R.id.imgBtnHasilPemeriksaan);
+                              String finalTextHasil = textHasil;
+                              imgBtnHasilPemeriksaan.setOnClickListener(new View.OnClickListener() {
+                                  @Override
+                                  public void onClick(View v) {
+                                      if (tts != null) {
+                                          tts.textToSpeech(finalTextHasil);
+                                      }
+                                  }
+                              });
                               InformasiMenjauhiRokokAdapter adapter = new InformasiMenjauhiRokokAdapter(myListData);
                               rV_tips.setHasFixedSize(true);
                               rV_tips.setLayoutManager(new LinearLayoutManager(HasilStressActivity.this));

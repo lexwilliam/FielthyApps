@@ -10,11 +10,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import example.com.fielthyapps.Feature.Medcheck.HasilMedCheckActivity;
-import example.com.fielthyapps.Feature.Smoker.InformasiMenjauhiRokokAdapter;
 import example.com.fielthyapps.R;
 
 public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.ViewHolder>{
