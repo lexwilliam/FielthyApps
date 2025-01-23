@@ -11,6 +11,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 import example.com.fielthyapps.Auth.LoginActivity;
+import example.com.fielthyapps.Service.DataLayerListenerService;
 
 public class MainActivity extends AppCompatActivity {
 private ImageView logo;

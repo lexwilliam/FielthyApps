@@ -1,12 +1,9 @@
 package example.com.fielthyapps.Service
 
-import android.media.MediaPlayer
 import android.net.Uri
 import android.util.Log
 import androidx.media3.common.MediaItem
-import androidx.media3.datasource.DataSource
 import androidx.media3.exoplayer.ExoPlayer
-import androidx.media3.exoplayer.source.MediaSource
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body
 import io.ktor.client.engine.android.Android
@@ -20,13 +17,11 @@ import io.ktor.client.request.header
 import io.ktor.client.request.post
 import io.ktor.client.request.setBody
 import io.ktor.serialization.kotlinx.json.json
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.runBlocking
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
 import java.io.File
-import java.io.FileInputStream
 import java.io.FileOutputStream
 import java.io.IOException
 
@@ -93,6 +88,7 @@ class ElevenLabs(
 
     private fun playMp3(mp3SoundByteArray: ByteArray) {
         try {
+            stopMp3()
             // create temp file that will hold byte array
             val tempMp3 = File.createTempFile("kurchina", "mp3", context.cacheDir)
             tempMp3.deleteOnExit()

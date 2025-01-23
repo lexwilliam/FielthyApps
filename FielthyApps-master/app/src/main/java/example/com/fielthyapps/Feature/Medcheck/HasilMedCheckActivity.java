@@ -86,7 +86,9 @@ public class HasilMedCheckActivity extends AppCompatActivity {
                             "Tekanan Darah " + get_sistolik + "/" + get_diastolik +
                             "Gula Darah " + get_guladarah +
                             "Kolestrol " + get_lemak;
-                    elevenLabs.textToSpeech(text);
+                    if (elevenLabs != null) {
+                        elevenLabs.textToSpeech(text);
+                    }
                 }
             });
 
@@ -328,7 +330,9 @@ public class HasilMedCheckActivity extends AppCompatActivity {
             imgBtnLaporanKesehatan.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    new ElevenLabs(HasilMedCheckActivity.this).textToSpeech(finalTextLaporanKesehatan);
+                    if (elevenLabs != null) {
+                        elevenLabs.textToSpeech(finalTextLaporanKesehatan);
+                    }
                 }
             });
         }

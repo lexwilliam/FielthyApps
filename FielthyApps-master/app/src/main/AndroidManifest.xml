@@ -20,9 +20,11 @@
     <uses-permission android:name="android.permission.health.READ_STEPS" />
     <uses-permission android:name="android.permission.health.READ_ACTIVE_CALORIES_BURNED" />
 
+
     <queries>
         <package android:name="com.google.android.apps.healthdata" />
     </queries>
+
 
     <application
         android:name=".FieltyApplication"
@@ -35,6 +37,24 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FielthyApps"
         tools:targetApi="31" >
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <service
+            android:name=".Service.DataLayerListenerService"
+            android:exported="true">
+            <intent-filter>
+                <!-- listeners receive events that match the action and data filters -->
+                <action android:name="com.google.android.gms.wearable.DATA_CHANGED" />
+                <data
+                    android:host="*"
+                    android:pathPrefix="/heartrate"
+                    android:scheme="wear" />
+            </intent-filter>
+        </service>
+
         <activity
             android:name=".Feature.Physical.HealthConnectActivity"
             android:exported="false" />

@@ -19,7 +19,12 @@ import androidx.health.connect.client.records.StepsRecord
 import androidx.health.connect.client.request.ReadRecordsRequest
 import androidx.health.connect.client.time.TimeRangeFilter
 import androidx.lifecycle.lifecycleScope
+import com.google.android.gms.wearable.DataClient
+import com.google.android.gms.wearable.DataEvent
+import com.google.android.gms.wearable.DataEventBuffer
+import com.google.android.gms.wearable.DataMapItem
 import example.com.fielthyapps.R
+import example.com.fielthyapps.Service.DataLayerListenerService
 import kotlinx.coroutines.launch
 import java.time.Instant
 import java.time.ZoneId
@@ -41,6 +46,7 @@ class HealthConnectActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+        startService(Intent(this, DataLayerListenerService::class.java))
         initUI()
         initHealthConnect()
     }

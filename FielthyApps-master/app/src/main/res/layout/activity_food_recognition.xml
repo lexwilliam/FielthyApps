@@ -28,12 +28,20 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <TextView
+            android:id="@+id/percentTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textAlignment="center"
+            android:text="100%" />
+
+        <TextView
             android:id="@+id/resultsTextView"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:textAlignment="center"
             android:textColor="@color/white"
-            android:textSize="32sp"
+            android:textSize="24sp"
             tools:text="Mac and cheese" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -44,6 +52,7 @@
             android:clickable="true"
             android:contentDescription="Confirm"
             app:srcCompat="@drawable/camera_white" />
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

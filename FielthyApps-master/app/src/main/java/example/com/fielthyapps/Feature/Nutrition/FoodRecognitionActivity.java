@@ -55,7 +55,8 @@ public class FoodRecognitionActivity extends AppCompatActivity {
 
         viewModel.recognition.observe(this, recognition -> {
             if (recognition != null) {
-                binding.resultsTextView.setText(recognition.getLabel());
+                binding.percentTextView.setText(Math.round(recognition.getConfidence() * 100) + "%");
+                binding.resultsTextView.setText(recognition.getLabel() + " ");
                 binding.btnCamera.setOnClickListener((v -> {
                     Intent intent = new Intent(FoodRecognitionActivity.this, FoodResultActivity.class);
                     intent.putExtra("name", recognition.getLabel());

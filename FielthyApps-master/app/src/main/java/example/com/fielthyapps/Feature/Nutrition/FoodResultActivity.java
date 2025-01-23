@@ -47,7 +47,7 @@ public class FoodResultActivity extends AppCompatActivity {
                         if (foodDetail != null && value != null) {
                             FoodDetailServing serving = foodDetail.getServings().getServingList().get(0);
                             binding.tvName.setText(foodDetail.getFoodName());
-                            binding.tvWeight.setText(foodDetail.getServings().getServingList().get(0).getServingDescription());
+                            binding.tvWeight.setText(serving.getMetricServingAmount() + " " + serving.getMetricServingUnit());
                             binding.tvCalories.setText(serving.getCalories() + " Kcal");
                             binding.tvProtein.setText(serving.getProtein() + " gr");
                             binding.tvCarbs.setText(serving.getCarbohydrate() + " gr");
@@ -65,7 +65,7 @@ public class FoodResultActivity extends AppCompatActivity {
                             binding.tvFiber.setText(serving.getFiber() + " gr");
                             binding.tvSugar.setText(serving.getSugar() + " gr");
                             binding.btnTTS.setOnClickListener(v -> {
-                                if (tts != null) {
+                                if (tts != null) {;
                                     tts.textToSpeech(serving.toSpeech());
                                 }
                             });
