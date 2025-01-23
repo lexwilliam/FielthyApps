@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Locale;
 
@@ -87,7 +88,11 @@ public class HasilMedCheckActivity extends AppCompatActivity {
                             "Gula Darah " + get_guladarah +
                             "Kolestrol " + get_lemak;
                     if (elevenLabs != null) {
-                        elevenLabs.textToSpeech(text);
+                        try {
+                            elevenLabs.textToSpeech(text);
+                        } catch (Exception e) {
+                            Toast.makeText(HasilMedCheckActivity.this, e.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+                        }
                     }
                 }
             });
@@ -331,7 +336,11 @@ public class HasilMedCheckActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View view) {
                     if (elevenLabs != null) {
-                        elevenLabs.textToSpeech(finalTextLaporanKesehatan);
+                        try {
+                            elevenLabs.textToSpeech(finalTextLaporanKesehatan);
+                        } catch (Exception e) {
+                            Toast.makeText(HasilMedCheckActivity.this, e.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+                        }
                     }
                 }
             });

@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -24,6 +25,7 @@ import java.util.Locale;
 import java.util.Map;
 
 import example.com.fielthyapps.Feature.History.HistoryActivity;
+import example.com.fielthyapps.Feature.Nutrition.FoodResultActivity;
 import example.com.fielthyapps.Feature.Smoker.InformasiMenjauhiRokokAdapter;
 import example.com.fielthyapps.Feature.Smoker.SmokerTipsList;
 import example.com.fielthyapps.R;
@@ -158,8 +160,12 @@ public class HasilStressActivity extends AppCompatActivity {
                               imgBtnHasilPemeriksaan.setOnClickListener(new View.OnClickListener() {
                                   @Override
                                   public void onClick(View v) {
-                                      if (tts != null) {
-                                          tts.textToSpeech(finalTextHasil);
+                                      if (tts != null) {;
+                                          try {
+                                              tts.textToSpeech(finalTextHasil);
+                                          } catch (Exception e) {
+                                              Toast.makeText(HasilStressActivity.this, e.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+                                          }
                                       }
                                   }
                               });

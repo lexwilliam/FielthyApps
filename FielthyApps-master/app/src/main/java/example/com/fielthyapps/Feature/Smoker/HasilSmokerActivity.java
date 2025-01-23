@@ -9,11 +9,13 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.text.NumberFormat;
 import java.util.Locale;
 
 import example.com.fielthyapps.Feature.History.HistoryActivity;
+import example.com.fielthyapps.Feature.Nutrition.FoodResultActivity;
 import example.com.fielthyapps.HomeActivity;
 import example.com.fielthyapps.R;
 import example.com.fielthyapps.Service.ElevenLabs;
@@ -92,7 +94,13 @@ private ElevenLabs tts;
             imgBtnHasilPemeriksaan.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    tts.textToSpeech(finalTextHasil);
+                    if (tts != null) {;
+                        try {
+                            tts.textToSpeech(finalTextHasil);
+                        } catch (Exception e) {
+                            Toast.makeText(HasilSmokerActivity.this, e.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+                        }
+                    };
                 }
             });
 

@@ -87,24 +87,18 @@ class ElevenLabs(
     }
 
     private fun playMp3(mp3SoundByteArray: ByteArray) {
-        try {
-            stopMp3()
-            // create temp file that will hold byte array
-            val tempMp3 = File.createTempFile("kurchina", "mp3", context.cacheDir)
-            tempMp3.deleteOnExit()
-            val fos = FileOutputStream(tempMp3)
-            fos.write(mp3SoundByteArray)
-            fos.close()
-            val mediaItem = MediaItem.fromUri(Uri.fromFile(tempMp3))
-            player = ExoPlayer.Builder(context).build()
-            player!!.setMediaItem(mediaItem)
-            player!!.prepare()
-            player!!.play()
-
-        } catch (ex: IOException) {
-            val s = ex.toString()
-            ex.printStackTrace()
-        }
+        stopMp3()
+        // create temp file that will hold byte array
+        val tempMp3 = File.createTempFile("kurchina", "mp3", context.cacheDir)
+        tempMp3.deleteOnExit()
+        val fos = FileOutputStream(tempMp3)
+        fos.write(mp3SoundByteArray)
+        fos.close()
+        val mediaItem = MediaItem.fromUri(Uri.fromFile(tempMp3))
+        player = ExoPlayer.Builder(context).build()
+        player!!.setMediaItem(mediaItem)
+        player!!.prepare()
+        player!!.play()
     }
 
     fun stopMp3() {

@@ -5,6 +5,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import example.com.fielthyapps.Feature.Medcheck.HasilMedCheckActivity;
 import example.com.fielthyapps.Repository.FoodDetailListener;
 import example.com.fielthyapps.Repository.NutritionRepository;
 import example.com.fielthyapps.Repository.NutritionRepositoryImpl;
@@ -66,7 +67,11 @@ public class FoodResultActivity extends AppCompatActivity {
                             binding.tvSugar.setText(serving.getSugar() + " gr");
                             binding.btnTTS.setOnClickListener(v -> {
                                 if (tts != null) {;
-                                    tts.textToSpeech(serving.toSpeech());
+                                    try {
+                                        tts.textToSpeech(serving.toSpeech());
+                                    } catch (Exception e) {
+                                        Toast.makeText(FoodResultActivity.this, e.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+                                    }
                                 }
                             });
                         }
