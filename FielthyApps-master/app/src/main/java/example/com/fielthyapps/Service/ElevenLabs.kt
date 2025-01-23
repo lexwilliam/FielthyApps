@@ -16,6 +16,7 @@ import io.ktor.client.plugins.observer.ResponseObserver
 import io.ktor.client.request.header
 import io.ktor.client.request.post
 import io.ktor.client.request.setBody
+import io.ktor.http.HttpStatusCode
 import io.ktor.serialization.kotlinx.json.json
 import kotlinx.coroutines.runBlocking
 import kotlinx.serialization.SerialName
@@ -80,6 +81,9 @@ class ElevenLabs(
                 header("Accept", "audio/mpeg")
                 header("xi-api-key", "sk_516ae87c3d58d002ab35a70bae7d299b55e84f4b37024a4e")
                 setBody(ElevenLabsRequest(text, "eleven_multilingual_v2"))
+            }
+            if (response.status == HttpStatusCode.Unauthorized) {
+                throw Exception("Insufficient elevenLabs credits")
             }
             response.body<ByteArray>()
         }
