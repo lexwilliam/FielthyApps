@@ -29,6 +29,7 @@ import kotlinx.coroutines.launch
 import java.time.Instant
 import java.time.ZoneId
 import java.time.ZonedDateTime
+import java.time.temporal.ChronoUnit
 
 
 class HealthConnectActivity : AppCompatActivity() {
@@ -62,8 +63,10 @@ class HealthConnectActivity : AppCompatActivity() {
         val permissions =
             setOf(
                 HealthPermission.getReadPermission(HeartRateRecord::class),
+                HealthPermission.getWritePermission(HeartRateRecord::class),
                 HealthPermission.getReadPermission(StepsRecord::class),
-                HealthPermission.getReadPermission(ActiveCaloriesBurnedRecord::class)
+                HealthPermission.getWritePermission(StepsRecord::class),
+                HealthPermission.getReadPermission(ActiveCaloriesBurnedRecord::class),
             )
 
         // Create the permissions launcher
@@ -114,11 +117,9 @@ class HealthConnectActivity : AppCompatActivity() {
             return
         }
         lifecycleScope.launch {
-            val zoneId = ZoneId.systemDefault()
-            val startOfDay = ZonedDateTime.now(zoneId).toLocalDate().atStartOfDay(zoneId)
-            val endOfDay = startOfDay.plusDays(1).minusSeconds(1)
-            val startTime = startOfDay.toInstant()
-            val endTime = endOfDay.toInstant()
+            val startTime = Instant.now().truncatedTo(java.time.temporal.ChronoUnit.DAYS).atZone(java.time.ZoneOffset.UTC).toInstant()
+            val endTime = Instant.now().plus(1, ChronoUnit.DAYS).truncatedTo(ChronoUnit.DAYS);
+            Log.d("TAG", "startTime: $startTime, endTime: $endTime")
             readHealthConnectRecord(healthConnectClient, startTime, endTime)
         }
     }
@@ -135,10 +136,9 @@ class HealthConnectActivity : AppCompatActivity() {
                     timeRangeFilter = TimeRangeFilter.between(startTime, endTime)
                 ),
             )
-            for (stepRecord in stepResponse.records) {
-                // Process each step record
-                tvStep.text = stepRecord.count.toString()
-            }
+            val stepRecord = stepResponse.records.maxOfOrNull { it.count } ?: 0
+            tvStep.text = stepRecord.toString()
+            tvActiveCalories.text = (stepRecord * 0.05f).toString()
             val heartBeatResponse = healthConnectClient.readRecords(
                 ReadRecordsRequest(
                     HeartRateRecord::class,
@@ -148,24 +148,8 @@ class HealthConnectActivity : AppCompatActivity() {
             if (heartBeatResponse.records.isEmpty()) {
                 tvHeartBeat.text = "Not Found"
             }
-            for (heartBeatRecord in heartBeatResponse.records) {
-                // Process each heartBeat record
-                tvHeartBeat.text = heartBeatRecord.samples.lastOrNull()?.beatsPerMinute?.toString() ?: "Not Found"
-            }
-            val activeCaloriesResponse = healthConnectClient.readRecords(
-                ReadRecordsRequest(
-                    ActiveCaloriesBurnedRecord::class,
-                    timeRangeFilter = TimeRangeFilter.between(startTime, endTime)
-                ),
-            )
-            if (activeCaloriesResponse.records.isEmpty()) {
-                tvActiveCalories.text = "Not Found"
-            }
-            for (activeCaloriesRecord in activeCaloriesResponse.records) {
-                // Process each activeCalories record
-                Log.d("TAG", activeCaloriesRecord.energy.inCalories.toString())
-                tvActiveCalories.text = activeCaloriesRecord.energy.inCalories.toString()
-            }
+            val heartBeatRecord = heartBeatResponse.records.firstOrNull()
+            tvHeartBeat.text = heartBeatRecord?.samples?.firstOrNull()?.beatsPerMinute?.toString() ?: "Not Found"
         } catch (e: Exception) {
             // Run error handling here
         }
